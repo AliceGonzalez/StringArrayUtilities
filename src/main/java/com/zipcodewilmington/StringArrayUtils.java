@@ -1,5 +1,7 @@
 package com.zipcodewilmington;
 
+import java.util.Arrays;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -45,6 +47,12 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
+        int i;
+        for(i = 0; i < array.length ; i++){
+            if(array[i].contains(value)){
+                return true;
+            }
+        }
         return false;
     }
 
