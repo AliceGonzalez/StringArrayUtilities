@@ -30,7 +30,7 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        return array[array.length-1];
+        return array[array.length - 1];
     }
 
     /**
@@ -39,7 +39,7 @@ public class StringArrayUtils {
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
 
-        return array[array.length-2];
+        return array[array.length - 2];
     }
 
     /**
@@ -49,8 +49,8 @@ public class StringArrayUtils {
      */ // TODO
     public static boolean contains(String[] array, String value) {
         int i;
-        for(i = 0; i < array.length ; i++){
-            if(array[i].contains(value)){
+        for (i = 0; i < array.length; i++) {
+            if (array[i].contains(value)) {
                 return true;
             }
         }
@@ -64,7 +64,7 @@ public class StringArrayUtils {
     public static String[] reverse(String[] array) {
         String[] newArray = new String[array.length];
         int newIdx = 0;
-        for (int i = array.length -1; i >= 0; i--){
+        for (int i = array.length - 1; i >= 0; i--) {
             newArray[newIdx] = array[i];
             newIdx++;
         }
@@ -78,10 +78,10 @@ public class StringArrayUtils {
     public static boolean isPalindromic(String[] array) {
         String[] reversedArray = new String[array.length];
         int arrayIndex = 0;
-        for (int i = array.length -1; i >= 0; i--){
+        for (int i = array.length - 1; i >= 0; i--) {
             reversedArray[arrayIndex] = array[i];
             arrayIndex++;
-            if(Arrays.equals(array, reversedArray)){
+            if (Arrays.equals(array, reversedArray)) {
                 return true;
             }
         }
@@ -93,7 +93,20 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        return false;
+        StringBuilder concatenatedStr = new StringBuilder();
+        for(String str : array){
+            concatenatedStr.append(str);
+        }
+
+        String concatenatedLowerCase = concatenatedStr.toString().toLowerCase();
+        char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
+        for(char letter : alphabet) {
+            if (concatenatedLowerCase.indexOf(letter) == -1) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -102,6 +115,7 @@ public class StringArrayUtils {
      * @return number of occurrences the specified `value` has occurred
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
+        int counter = 0;
         return 0;
     }
 
