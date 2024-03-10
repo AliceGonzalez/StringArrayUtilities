@@ -1,5 +1,6 @@
 package com.zipcodewilmington;
 
+import java.sql.Array;
 import java.util.Arrays;
 
 /**
@@ -61,8 +62,30 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+        String[] newArray = new String[array.length];
+        int newIdx = 0;
+        for (int i = array.length -1; i >= 0; i--){
+            newArray[newIdx] = array[i];
+            newIdx++;
+        }
+        return newArray;
     }
+
+//
+//        // Create a new array with the same length as the input array
+//        String[] newArray = new String[array.length];
+//        // Initialize a counter for the new array
+//        int newIndex = 0;
+//        // Loop through the original array in reverse order
+//        for (int i = array.length - 1; i >= 0; i--) {
+//            // Assign each element from the original array to the new array
+//            newArray[newIndex] = array[i];
+//            // Increment the counter for the new array
+//            newIndex++;
+//        }
+//        // Return the reversed array
+//        return newArray;
+//    }
 
     /**
      * @param array array of String objects
