@@ -116,7 +116,12 @@ public class StringArrayUtils {
      */ // TODO
     public static int getNumberOfOccurrences(String[] array, String value) {
         int counter = 0;
-        return 0;
+        for (int i = 0; i < array.length; i ++){
+            if(array[i].equals(value)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     /**
