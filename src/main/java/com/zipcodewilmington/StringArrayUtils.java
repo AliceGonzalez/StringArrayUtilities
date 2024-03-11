@@ -1,6 +1,7 @@
 package com.zipcodewilmington;
 
 import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -130,8 +131,19 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+        //Create new int array
+        ArrayList<String> newArray = new ArrayList<>();
+        //String[] newArray = new String[Array.length -1];
+
+        for (int i = 0; i < array.length; i++){
+            if (!array[i].equals(valueToRemove)){
+                newArray.add(array[i]);
+            }
+        }
+        return newArray.toArray(new String[0]);
     }
+
+   // ArrayList<Type> str = new ArrayList<Type>();
 
     /**
      * @param array array of chars
