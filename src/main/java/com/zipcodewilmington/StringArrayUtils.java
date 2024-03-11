@@ -1,8 +1,7 @@
 package com.zipcodewilmington;
 
 import java.sql.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by leon on 1/29/18.
@@ -150,8 +149,18 @@ public class StringArrayUtils {
      * @return array of Strings with consecutive duplicates removes
      */ // TODO
     public static String[] removeConsecutiveDuplicates(String[] array) {
-        return null;
+        List<String> newArray = new ArrayList<>();
+        if(array.length >0){
+            newArray.add(array[0]);
+        }
+        for(int i = 1; i < array.length; i++){
+            if(!array[i].equals(array[i -1 ])) {
+                newArray.add(array[i]);
+            }
+        }
+        return newArray.toArray(new String[0]);
     }
+
 
     /**
      * @param array array of chars
